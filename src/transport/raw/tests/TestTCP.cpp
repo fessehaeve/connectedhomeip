@@ -182,6 +182,7 @@ void CheckSimpleInitTest(nlTestSuite * inSuite, void * inContext, Inet::IPAddres
 void CheckSimpleInitTest4(nlTestSuite * inSuite, void * inContext)
 {
     CheckSimpleInitTest(inSuite, inContext, kIPAddressType_IPv4);
+    ChipLogError(Inet, "yujuan: CheckSimpleInitTest4:185");
 }
 #endif
 
@@ -194,18 +195,25 @@ void CheckSimpleInitTest6(nlTestSuite * inSuite, void * inContext)
 
 void CheckMessageTest(nlTestSuite * inSuite, void * inContext, const IPAddress & addr)
 {
+    ChipLogError(Inet, "yujuan: CheckMessageTest:198");
     TestContext & ctx = *reinterpret_cast<TestContext *>(inContext);
     TCPImpl tcp;
 
+    ChipLogError(Inet, "yujuan: CheckMessageTest:202");
     MockTransportMgrDelegate gMockTransportMgrDelegate(inSuite, ctx);
+    ChipLogError(Inet, "yujuan: CheckMessageTest:204");    
     gMockTransportMgrDelegate.InitializeMessageTest(tcp, addr);
+    ChipLogError(Inet, "yujuan: CheckMessageTest:206");    
     gMockTransportMgrDelegate.SingleMessageTest(tcp, addr);
+    ChipLogError(Inet, "yujuan: CheckMessageTest:208");
     gMockTransportMgrDelegate.FinalizeMessageTest(tcp, addr);
+    ChipLogError(Inet, "yujuan: CheckMessageTest:210");    
 }
 
 #if INET_CONFIG_ENABLE_IPV4
 void CheckMessageTest4(nlTestSuite * inSuite, void * inContext)
 {
+    ChipLogError(Inet, "yujuan: CheckMessageTest4:209");
     IPAddress addr;
     IPAddress::FromString("127.0.0.1", addr);
     CheckMessageTest(inSuite, inContext, addr);
