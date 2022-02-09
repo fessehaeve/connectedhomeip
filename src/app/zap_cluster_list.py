@@ -87,7 +87,8 @@ SERVER_CLUSTERS: typing.Dict[str, typing.List[str]] = {
     'WAKE_ON_LAN_CLUSTER': ['wake-on-lan-server'],
     'WIFI_NETWORK_DIAGNOSTICS_CLUSTER': ['wifi-network-diagnostics-server'],
     'WINDOW_COVERING_CLUSTER': ['window-covering-server'],
-    'ZLL_COMMISSIONING_CLUSTER': []
+    'ZLL_COMMISSIONING_CLUSTER': [],
+    'EVE_UTILITY_CLUSTER': []
 }
 
 # List of directories in src/app/clusters to build for client clusters.
@@ -170,7 +171,8 @@ CLIENT_CLUSTERS: typing.Dict[str, typing.List[str]] = {
     'WAKE_ON_LAN_CLUSTER': [],
     'WIFI_NETWORK_DIAGNOSTICS_CLUSTER': [],
     'WINDOW_COVERING_CLUSTER': [],
-    'ZLL_COMMISSIONING_CLUSTER': []
+    'ZLL_COMMISSIONING_CLUSTER': [],
+	'EVE_UTILITY_CLUSTER': []
 }
 
 

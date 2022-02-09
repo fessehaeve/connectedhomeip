@@ -257,6 +257,7 @@ void MatterTimeSynchronizationPluginServerInitCallback() {}
 void MatterProxyValidPluginServerInitCallback() {}
 void MatterProxyDiscoveryPluginServerInitCallback() {}
 void MatterProxyConfigurationPluginServerInitCallback() {}
+void MatterEveUtilityPluginServerInitCallback() {}
 
 // ****************************************
 // This function is called by the application when the stack goes down,
