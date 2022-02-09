@@ -169,6 +169,9 @@ static constexpr ClusterId Id = 0x00000045;
 namespace ModeSelect {
 static constexpr ClusterId Id = 0x00000050;
 } // namespace ModeSelect
+namespace EveUtility {
+static constexpr ClusterId Id = 0x130A0061;
+} // namespace EveUtility
 namespace ShadeConfiguration {
 static constexpr ClusterId Id = 0x00000100;
 } // namespace ShadeConfiguration

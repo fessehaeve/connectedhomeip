@@ -666,6 +666,14 @@
 #define ZCL_START_UP_MODE_ATTRIBUTE_ID (0x0003)
 #define ZCL_MODE_DESCRIPTION_ATTRIBUTE_ID (0x0004)
 
+// Attribute ids for cluster: Eve Utility
+
+// Client attributes
+
+// Server attributes
+#define ZCL_SET_CONFIG_ATTRIBUTE_ID (0xF11D)
+#define ZCL_GET_CONFIG_ATTRIBUTE_ID (0xF131)
+
 // Attribute ids for cluster: Shade Configuration
 
 // Client attributes

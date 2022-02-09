@@ -17804,6 +17804,116 @@ struct TypeInfo
 };
 } // namespace Attributes
 } // namespace ModeSelect
+namespace EveUtility {
+
+namespace Attributes {
+
+namespace SetConfig {
+struct TypeInfo
+{
+    using Type             = chip::ByteSpan;
+    using DecodableType    = chip::ByteSpan;
+    using DecodableArgType = chip::ByteSpan;
+
+    static constexpr ClusterId GetClusterId() { return Clusters::EveUtility::Id; }
+    static constexpr AttributeId GetAttributeId() { return Attributes::SetConfig::Id; }
+    static constexpr bool MustUseTimedWrite() { return false; }
+    static constexpr size_t MaxLength() { return 254; }
+};
+} // namespace SetConfig
+namespace GetConfig {
+struct TypeInfo
+{
+    using Type             = chip::ByteSpan;
+    using DecodableType    = chip::ByteSpan;
+    using DecodableArgType = chip::ByteSpan;
+
+    static constexpr ClusterId GetClusterId() { return Clusters::EveUtility::Id; }
+    static constexpr AttributeId GetAttributeId() { return Attributes::GetConfig::Id; }
+    static constexpr bool MustUseTimedWrite() { return false; }
+    static constexpr size_t MaxLength() { return 254; }
+};
+} // namespace GetConfig
+namespace ServerGeneratedCommandList {
+struct TypeInfo
+{
+    using Type             = chip::app::DataModel::List<const chip::CommandId>;
+    using DecodableType    = chip::app::DataModel::DecodableList<chip::CommandId>;
+    using DecodableArgType = const chip::app::DataModel::DecodableList<chip::CommandId> &;
+
+    static constexpr ClusterId GetClusterId() { return Clusters::EveUtility::Id; }
+    static constexpr AttributeId GetAttributeId() { return Attributes::ServerGeneratedCommandList::Id; }
+    static constexpr bool MustUseTimedWrite() { return false; }
+};
+} // namespace ServerGeneratedCommandList
+namespace ClientGeneratedCommandList {
+struct TypeInfo
+{
+    using Type             = chip::app::DataModel::List<const chip::CommandId>;
+    using DecodableType    = chip::app::DataModel::DecodableList<chip::CommandId>;
+    using DecodableArgType = const chip::app::DataModel::DecodableList<chip::CommandId> &;
+
+    static constexpr ClusterId GetClusterId() { return Clusters::EveUtility::Id; }
+    static constexpr AttributeId GetAttributeId() { return Attributes::ClientGeneratedCommandList::Id; }
+    static constexpr bool MustUseTimedWrite() { return false; }
+};
+} // namespace ClientGeneratedCommandList
+namespace AttributeList {
+struct TypeInfo
+{
+    using Type             = chip::app::DataModel::List<const chip::AttributeId>;
+    using DecodableType    = chip::app::DataModel::DecodableList<chip::AttributeId>;
+    using DecodableArgType = const chip::app::DataModel::DecodableList<chip::AttributeId> &;
+
+    static constexpr ClusterId GetClusterId() { return Clusters::EveUtility::Id; }
+    static constexpr AttributeId GetAttributeId() { return Attributes::AttributeList::Id; }
+    static constexpr bool MustUseTimedWrite() { return false; }
+};
+} // namespace AttributeList
+namespace FeatureMap {
+struct TypeInfo
+{
+    using Type             = uint32_t;
+    using DecodableType    = uint32_t;
+    using DecodableArgType = uint32_t;
+
+    static constexpr ClusterId GetClusterId() { return Clusters::EveUtility::Id; }
+    static constexpr AttributeId GetAttributeId() { return Attributes::FeatureMap::Id; }
+    static constexpr bool MustUseTimedWrite() { return false; }
+};
+} // namespace FeatureMap
+namespace ClusterRevision {
+struct TypeInfo
+{
+    using Type             = uint16_t;
+    using DecodableType    = uint16_t;
+    using DecodableArgType = uint16_t;
+
+    static constexpr ClusterId GetClusterId() { return Clusters::EveUtility::Id; }
+    static constexpr AttributeId GetAttributeId() { return Attributes::ClusterRevision::Id; }
+    static constexpr bool MustUseTimedWrite() { return false; }
+};
+} // namespace ClusterRevision
+
+struct TypeInfo
+{
+    struct DecodableType
+    {
+        static constexpr ClusterId GetClusterId() { return Clusters::EveUtility::Id; }
+
+        CHIP_ERROR Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path);
+
+        Attributes::SetConfig::TypeInfo::DecodableType setConfig;
+        Attributes::GetConfig::TypeInfo::DecodableType getConfig;
+        Attributes::ServerGeneratedCommandList::TypeInfo::DecodableType serverGeneratedCommandList;
+        Attributes::ClientGeneratedCommandList::TypeInfo::DecodableType clientGeneratedCommandList;
+        Attributes::AttributeList::TypeInfo::DecodableType attributeList;
+        Attributes::FeatureMap::TypeInfo::DecodableType featureMap           = static_cast<uint32_t>(0);
+        Attributes::ClusterRevision::TypeInfo::DecodableType clusterRevision = static_cast<uint16_t>(0);
+    };
+};
+} // namespace Attributes
+} // namespace EveUtility
 namespace ShadeConfiguration {
 
 namespace Attributes {

@@ -11641,6 +11641,49 @@ namespace Events {
 } // namespace Events
 
 } // namespace ModeSelect
+namespace EveUtility {
+
+namespace Commands {
+} // namespace Commands
+
+namespace Attributes {
+CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
+{
+    switch (path.mAttributeId)
+    {
+    case Attributes::SetConfig::TypeInfo::GetAttributeId():
+        ReturnErrorOnFailure(DataModel::Decode(reader, setConfig));
+        break;
+    case Attributes::GetConfig::TypeInfo::GetAttributeId():
+        ReturnErrorOnFailure(DataModel::Decode(reader, getConfig));
+        break;
+    case Attributes::ServerGeneratedCommandList::TypeInfo::GetAttributeId():
+        ReturnErrorOnFailure(DataModel::Decode(reader, serverGeneratedCommandList));
+        break;
+    case Attributes::ClientGeneratedCommandList::TypeInfo::GetAttributeId():
+        ReturnErrorOnFailure(DataModel::Decode(reader, clientGeneratedCommandList));
+        break;
+    case Attributes::AttributeList::TypeInfo::GetAttributeId():
+        ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
+        break;
+    case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+        ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
+        break;
+    case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+        ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
+        break;
+    default:
+        break;
+    }
+
+    return CHIP_NO_ERROR;
+}
+} // namespace Attributes
+
+namespace Events {
+} // namespace Events
+
+} // namespace EveUtility
 namespace ShadeConfiguration {
 
 namespace Commands {

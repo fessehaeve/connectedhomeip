@@ -115,6 +115,8 @@ void __attribute__((weak)) MatterBooleanStatePluginClientInitCallback() {}
 void MatterBooleanStatePluginServerInitCallback();
 void __attribute__((weak)) MatterModeSelectPluginClientInitCallback() {}
 void MatterModeSelectPluginServerInitCallback();
+void __attribute__((weak)) MatterEveUtilityPluginClientInitCallback() {}
+void MatterEveUtilityPluginServerInitCallback();
 void __attribute__((weak)) MatterShadeConfigurationPluginClientInitCallback() {}
 void MatterShadeConfigurationPluginServerInitCallback();
 void __attribute__((weak)) MatterDoorLockPluginClientInitCallback() {}

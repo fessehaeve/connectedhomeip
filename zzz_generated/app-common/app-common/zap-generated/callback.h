@@ -429,6 +429,14 @@ void emberAfBooleanStateClusterInitCallback(chip::EndpointId endpoint);
  */
 void emberAfModeSelectClusterInitCallback(chip::EndpointId endpoint);
 
+/** @brief Eve Utility Cluster Init
+ *
+ * Cluster Init
+ *
+ * @param endpoint    Endpoint that is being initialized
+ */
+void emberAfEveUtilityClusterInitCallback(chip::EndpointId endpoint);
+
 /** @brief Shade Configuration Cluster Init
  *
  * Cluster Init
@@ -5990,6 +5998,110 @@ void emberAfModeSelectClusterServerTickCallback(chip::EndpointId endpoint);
  * @param endpoint  Endpoint that is being served
  */
 void emberAfModeSelectClusterClientTickCallback(chip::EndpointId endpoint);
+
+//
+// Eve Utility Cluster
+//
+
+/** @brief Eve Utility Cluster Server Init
+ *
+ * Server Init
+ *
+ * @param endpoint    Endpoint that is being initialized
+ */
+void emberAfEveUtilityClusterServerInitCallback(chip::EndpointId endpoint);
+
+/** @brief Eve Utility Cluster Client Init
+ *
+ * Client Init
+ *
+ * @param endpoint    Endpoint that is being initialized
+ */
+void emberAfEveUtilityClusterClientInitCallback(chip::EndpointId endpoint);
+
+/** @brief Eve Utility Cluster Server Attribute Changed
+ *
+ * Server Attribute Changed
+ *
+ * @param attributePath Concrete attribute path that changed
+ */
+void MatterEveUtilityClusterServerAttributeChangedCallback(const chip::app::ConcreteAttributePath & attributePath);
+
+/** @brief Eve Utility Cluster Client Attribute Changed
+ *
+ * Client Attribute Changed
+ *
+ * @param attributePath Concrete attribute path that changed
+ */
+void MatterEveUtilityClusterClientAttributeChangedCallback(const chip::app::ConcreteAttributePath & attributePath);
+
+/** @brief Eve Utility Cluster Server Message Sent
+ *
+ * Server Message Sent
+ *
+ * @param destination        The destination to which the message was sent
+ * @param apsFrame           The APS frame for the message
+ * @param msgLen             The length of the message
+ * @param message            The message that was sent
+ * @param status             The status of the sent message
+ */
+void emberAfEveUtilityClusterServerMessageSentCallback(const chip::MessageSendDestination & destination, EmberApsFrame * apsFrame,
+                                                       uint16_t msgLen, uint8_t * message, EmberStatus status);
+
+/** @brief Eve Utility Cluster Client Message Sent
+ *
+ * Client Message Sent
+ *
+ * @param destination        The destination to which the message was sent
+ * @param apsFrame           The APS frame for the message
+ * @param msgLen             The length of the message
+ * @param message            The message that was sent
+ * @param status             The status of the sent message
+ */
+void emberAfEveUtilityClusterClientMessageSentCallback(const chip::MessageSendDestination & destination, EmberApsFrame * apsFrame,
+                                                       uint16_t msgLen, uint8_t * message, EmberStatus status);
+
+/** @brief Eve Utility Cluster Server Pre Attribute Changed
+ *
+ * Server Pre Attribute Changed
+ *
+ * @param attributePath Concrete attribute path to be changed
+ * @param attributeType Attribute type
+ * @param size          Attribute size
+ * @param value         Attribute value
+ */
+chip::Protocols::InteractionModel::Status
+MatterEveUtilityClusterServerPreAttributeChangedCallback(const chip::app::ConcreteAttributePath & attributePath,
+                                                         EmberAfAttributeType attributeType, uint16_t size, uint8_t * value);
+
+/** @brief Eve Utility Cluster Client Pre Attribute Changed
+ *
+ * Client Pre Attribute Changed
+ *
+ * @param attributePath Concrete attribute path to be changed
+ * @param attributeType Attribute type
+ * @param size          Attribute size
+ * @param value         Attribute value
+ */
+chip::Protocols::InteractionModel::Status
+MatterEveUtilityClusterClientPreAttributeChangedCallback(const chip::app::ConcreteAttributePath & attributePath,
+                                                         EmberAfAttributeType attributeType, uint16_t size, uint8_t * value);
+
+/** @brief Eve Utility Cluster Server Tick
+ *
+ * Server Tick
+ *
+ * @param endpoint  Endpoint that is being served
+ */
+void emberAfEveUtilityClusterServerTickCallback(chip::EndpointId endpoint);
+
+/** @brief Eve Utility Cluster Client Tick
+ *
+ * Client Tick
+ *
+ * @param endpoint  Endpoint that is being served
+ */
+void emberAfEveUtilityClusterClientTickCallback(chip::EndpointId endpoint);
 
 //
 // Shade Configuration Cluster

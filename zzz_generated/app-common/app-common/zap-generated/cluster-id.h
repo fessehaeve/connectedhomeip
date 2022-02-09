@@ -166,6 +166,9 @@ static constexpr chip::ClusterId ZCL_BOOLEAN_STATE_CLUSTER_ID = 0x0045;
 // Definitions for cluster: Mode Select
 static constexpr chip::ClusterId ZCL_MODE_SELECT_CLUSTER_ID = 0x0050;
 
+// Definitions for cluster: Eve Utility
+static constexpr chip::ClusterId ZCL_EVE_UTILITY_CLUSTER_ID = 0x0061;
+
 // Definitions for cluster: Shade Configuration
 static constexpr chip::ClusterId ZCL_SHADE_CONFIG_CLUSTER_ID = 0x0100;
 
