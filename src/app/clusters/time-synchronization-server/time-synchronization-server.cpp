@@ -546,7 +546,7 @@ CHIP_ERROR TimeSynchronizationServer::SetTimeZone(const DataModel::DecodableList
     }
     if (items == 0)
     {
-        return ClearTimeZone();
+        return CHIP_IM_GLOBAL_STATUS(ConstraintError);
     }
 
     char name[TimeSyncDataProvider::kTimeZoneNameLength];
