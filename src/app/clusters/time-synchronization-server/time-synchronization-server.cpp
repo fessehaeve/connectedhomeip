@@ -555,9 +555,9 @@ CHIP_ERROR TimeSynchronizationServer::SetTimeZone(const DataModel::DecodableList
 
     if (lastTzState != TimeState::kInvalid)
     {
-        const auto & tzStore = GetTimeZone()[0];
-        lastTz.offset        = tzStore.timeZone.offset;
-        if (tzStore.timeZone.name.HasValue())
+        const TimeSyncDataProvider::TimeZoneStore & tzStore = GetTimeZone()[0];
+        lastTz.offset                                       = tzStore.timeZone.offset;
+        if (tzStore.timeZone.name.HasValue() && sizeof(name) >= sizeof(tzStore.name))
         {
             lastTz.name.SetValue(CharSpan(name));
             memcpy(name, tzStore.name, sizeof(tzStore.name));
@@ -627,7 +627,8 @@ CHIP_ERROR TimeSynchronizationServer::SetTimeZone(const DataModel::DecodableList
         {
             emit = true;
         }
-        if ((tz.name.HasValue() && lastTz.name.HasValue()) && !(tz.name.Value().data_equal(lastTz.name.Value())))
+        if (tz.name.HasValue() != lastTz.name.HasValue() ||
+            ((tz.name.HasValue() && lastTz.name.HasValue()) && !(tz.name.Value().data_equal(lastTz.name.Value()))))
         {
             emit = true;
         }
